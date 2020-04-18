@@ -11,6 +11,11 @@ public class RubberDuck extends Duck {
     }
 
     @Override
+    public void fly() {
+        // CAN NOT FLY AND DO NOTHING
+    }
+
+    @Override
     public void display() {
         log.info("橡胶鸭子");
     }

@@ -13,5 +13,9 @@ public abstract class Duck {
         log.info("游泳");
     }
 
+    public void fly() {
+        log.info("飞翔");
+    }
+
     public abstract void display();
 }
