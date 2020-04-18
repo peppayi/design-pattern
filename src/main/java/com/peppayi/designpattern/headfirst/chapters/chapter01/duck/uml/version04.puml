@@ -1,0 +1,75 @@
+@startuml
+
+package "Client" <<Frame>> {
+    abstract class Duck {
+        # FlyBehavior flyBehavior
+        # QuackBehavior quackBehavior
+
+        + void swim()
+        + {abstract} void display()
+        + void performFly()
+        + void performQuack()
+    }
+
+    class MallardDuck {
+        + void display()
+    }
+    Duck <|.. MallardDuck
+
+    class RedheadDuck {
+        + void display()
+    }
+    Duck <|.. RedheadDuck
+
+    class RubberDuck {
+        + void display()
+    }
+    Duck <|.. RubberDuck
+
+    class DecoyDuck {
+        + void display()
+    }
+    Duck <|.. DecoyDuck
+}
+
+package "Encapsulated fly behavior" << Rectangle >> {
+    interface FlyBehavior << interface >> {
+        + void fly()
+    }
+
+    class FlyWithWings {
+        + void fly()
+    }
+    FlyBehavior <|.. FlyWithWings
+
+    class FlyNoWay {
+        + void fly()
+    }
+    FlyBehavior <|.. FlyNoWay
+}
+
+package "Encapsulated quack behavior" << Rectangle >> {
+    interface QuackBehavior << interface >> {
+        + void quack()
+    }
+
+    class Quack {
+        + void quack()
+    }
+    QuackBehavior <|.. Quack
+
+    class Squeak {
+        + void quack()
+    }
+    QuackBehavior <|.. Squeak
+
+    class MuteQuack {
+        + void quack()
+    }
+    QuackBehavior <|.. MuteQuack
+}
+
+Duck -right-> FlyBehavior
+Duck --> QuackBehavior
+
+@enduml
