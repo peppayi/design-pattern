@@ -2,8 +2,10 @@ package com.peppayi.designpattern.headfirst.chapters.chapter01.duck;
 
 import com.peppayi.designpattern.headfirst.chapters.chapter01.duck.fly.FlyBehavior;
 import com.peppayi.designpattern.headfirst.chapters.chapter01.duck.quack.QuackBehavior;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
+@Setter
 @Slf4j
 public abstract class Duck {
 
