@@ -1,22 +1,19 @@
 package com.peppayi.designpattern.headfirst.chapters.chapter01.duck;
 
+import com.peppayi.designpattern.headfirst.chapters.chapter01.duck.fly.FlyWithWings;
+import com.peppayi.designpattern.headfirst.chapters.chapter01.duck.quack.Quack;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class RedheadDuck extends Duck implements Flyable, Quackable {
+public class RedheadDuck extends Duck {
+
+    public RedheadDuck() {
+        this.flyBehavior = new FlyWithWings();
+        this.quackBehavior = new Quack();
+    }
 
     @Override
     public void display() {
         log.info("红头鸭子");
-    }
-
-    @Override
-    public void fly() {
-        log.info("红头鸭子飞啦");
-    }
-
-    @Override
-    public void quack() {
-        log.info("红头鸭子嘎嘎嘎");
     }
 }
