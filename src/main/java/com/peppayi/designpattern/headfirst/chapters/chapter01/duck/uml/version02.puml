@@ -1,0 +1,28 @@
+@startuml
+
+abstract class Duck {
+    void swin();
+    {abstract} void display();
+}
+
+interface Flyable
+interface Quackable
+
+class MallardDuck
+Duck <|-- MallardDuck
+Flyable <|.. MallardDuck
+Quackable <|.. MallardDuck
+
+class RedheadDuck
+Duck <|-- RedheadDuck
+Flyable <|.. RedheadDuck
+Quackable <|.. RedheadDuck
+
+class RubberDuck
+Duck <|-- RubberDuck
+Quackable <|.. RubberDuck
+
+class DecoyDuck
+Duck <|-- DecoyDuck
+
+@enduml

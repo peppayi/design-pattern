@@ -1,0 +1,18 @@
+@startuml
+
+abstract class Duck {
+    + void quack();
+    + void swim();
+    + void fly();
+    + {abstract} void display();
+}
+
+class MallardDuck
+class RedheadDuck
+class RubberDuck
+
+Duck <|-- MallardDuck
+Duck <|-- RedheadDuck
+Duck <|-- RubberDuck
+
+@enduml
