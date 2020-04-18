@@ -10,3 +10,5 @@ Change.
 > what stays the same.
 
 > Program to an interface, not an implementation.
+
+> Favor composition over inheritance.
