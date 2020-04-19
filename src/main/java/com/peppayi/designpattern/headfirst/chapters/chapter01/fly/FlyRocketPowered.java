@@ -1,4 +1,4 @@
-package com.peppayi.designpattern.headfirst.chapters.chapter01.duck.fly;
+package com.peppayi.designpattern.headfirst.chapters.chapter01.fly;
 
 import lombok.extern.slf4j.Slf4j;
 

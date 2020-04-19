@@ -1,6 +1,6 @@
-package com.peppayi.designpattern.headfirst.chapters.chapter01.duck;
+package com.peppayi.designpattern.headfirst.chapters.chapter01;
 
-import com.peppayi.designpattern.headfirst.chapters.chapter01.duck.fly.FlyRocketPowered;
+import com.peppayi.designpattern.headfirst.chapters.chapter01.fly.FlyRocketPowered;
 
 public class DuckApplication {
 

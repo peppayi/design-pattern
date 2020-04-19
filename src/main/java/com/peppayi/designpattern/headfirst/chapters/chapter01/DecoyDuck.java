@@ -1,7 +1,7 @@
-package com.peppayi.designpattern.headfirst.chapters.chapter01.duck;
+package com.peppayi.designpattern.headfirst.chapters.chapter01;
 
-import com.peppayi.designpattern.headfirst.chapters.chapter01.duck.fly.FlyNoWay;
-import com.peppayi.designpattern.headfirst.chapters.chapter01.duck.quack.MuteQuack;
+import com.peppayi.designpattern.headfirst.chapters.chapter01.fly.FlyNoWay;
+import com.peppayi.designpattern.headfirst.chapters.chapter01.quack.MuteQuack;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

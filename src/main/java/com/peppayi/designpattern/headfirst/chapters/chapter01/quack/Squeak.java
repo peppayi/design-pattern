@@ -1,4 +1,4 @@
-package com.peppayi.designpattern.headfirst.chapters.chapter01.duck.quack;
+package com.peppayi.designpattern.headfirst.chapters.chapter01.quack;
 
 import lombok.extern.slf4j.Slf4j;
 
