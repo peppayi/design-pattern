@@ -1,0 +1,65 @@
+@startuml
+
+package "Weather Station" <<Frame>> {
+interface Subject <<interface>> {
+    + void registerObserver()
+    + void removeObserver()
+    + void notifyObservers()
+}
+
+interface Observer <<interface>> {
+    + void update()
+}
+
+Subject -right-> "*" Observer: observers
+
+interface DisplayElement <<interface>> {
+    + void display()
+}
+
+class WeatherData {
+    + void registerObserver()
+    + void removeObserver()
+    + void notifyObservers()
+
+    + double getTemperature()
+    + double getHumidity()
+    + double getPressure()
+
+    + void measurementsChanged()
+}
+Subject <|.. WeatherData
+
+class CurrentConditionsDisplay {
+    + void update()
+    + void display()
+}
+Observer <|.. CurrentConditionsDisplay
+DisplayElement <|.. CurrentConditionsDisplay
+CurrentConditionsDisplay -left-> Subject: subject
+
+class StatisticsDisplay {
+    + void update()
+    + void display()
+}
+Observer <|.. StatisticsDisplay
+DisplayElement <|.. StatisticsDisplay
+
+class ForecastDisplay {
+    + void update()
+    + void display()
+}
+Observer <|.. ForecastDisplay
+DisplayElement <|.. ForecastDisplay
+}
+
+package "API" <<Rectangle>> {
+class ThirdPartyDisplay {
+    + void update()
+    + void display
+}
+Observer <|.. ThirdPartyDisplay
+DisplayElement <|.. ThirdPartyDisplay
+}
+
+@enduml
