@@ -1,0 +1,32 @@
+@startuml
+
+interface Subject <<interface>> {
+    + void registerObserver()
+    + void removeObserver()
+    + void notifyObservers()
+}
+
+interface Observer <<interface>> {
+    + void update()
+}
+
+Subject -right-> "*" Observer: observers
+
+class ConcreteSubject {
+    - Object state
+
+    + void registerObserver()
+    + void removeObserver()
+    + void notifyObservers()
+
+    + void getState()
+}
+Subject <|.. ConcreteSubject
+
+class ConcreteObserver {
+    + void update()
+}
+Observer <|.. ConcreteObserver
+ConcreteObserver -left-> ConcreteSubject
+
+@enduml
