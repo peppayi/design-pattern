@@ -4,10 +4,9 @@ import com.peppayi.designpattern.headfirst.chapters.chapter03.CondimentDecorator
 import com.peppayi.designpattern.headfirst.chapters.chapter03.beverage.Beverage;
 
 public class Whip extends CondimentDecorator {
-    private Beverage beverage;
 
     public Whip(Beverage beverage) {
-        this.beverage = beverage;
+        super(beverage);
     }
 
     @Override

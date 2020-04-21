@@ -5,10 +5,8 @@ import com.peppayi.designpattern.headfirst.chapters.chapter03.beverage.Beverage;
 
 public class Soy extends CondimentDecorator {
 
-    private Beverage beverage;
-
     public Soy(Beverage beverage) {
-        this.beverage = beverage;
+        super(beverage);
     }
 
     @Override
