@@ -1,0 +1,42 @@
+@startuml
+
+interface Component <<interface>> {
+    + methodA()
+    + methodB()
+}
+
+class ConcreteComponent {
+    + methodA()
+    + methodB()
+}
+
+Component <|.. ConcreteComponent
+
+abstract class Decorator <<abstract>> {
+    - Component component
+
+    + methodA()
+    + methodB()
+}
+Component <|.. Decorator
+Decorator *--> Component: component
+
+class ConcreteDecoratorA {
+    - Component component
+
+    + methodA()
+    + methodB()
+    + newBehavior()
+}
+Decorator <|-- ConcreteDecoratorA
+
+class ConcreteDecoratorB {
+    - Component component
+    - Object newState
+
+    + methodA()
+    + methodB()
+}
+Decorator <|-- ConcreteDecoratorB
+
+@enduml
