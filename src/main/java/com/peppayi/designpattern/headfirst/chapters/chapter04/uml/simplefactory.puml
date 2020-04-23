@@ -1,0 +1,61 @@
+@startuml
+
+class PizzaStore {
+    + orderPizza()
+}
+note left of PizzaStore
+This is the client of the factory. PizzaStore
+now goes through the SimplePizzaFactory
+to get instances of pizza.
+end note
+
+class SimplePizzaFactory {
+    + {static} createPizza()
+}
+note top of SimplePizzaFactory
+This is the factory where we create pizzas;
+it should be the only part of our application
+that refers to concrete Pizza classes..
+end note
+note bottom of SimplePizzaFactory: The create method is often declared statically
+
+PizzaStore -right-> SimplePizzaFactory
+
+abstract class Pizza <<abstract>> {
+    + prepare()
+    + bake()
+    + cut()
+    + box()
+}
+SimplePizzaFactory -right-> Pizza
+
+note top of Pizza: This is the product of the factory: pizza!
+
+note right of Pizza
+We've defined Pizza as an
+abstract class with some
+helpful implementations
+that can be overridden.
+end note
+
+class CheesePizza
+class VeggiePizza
+class ClamPizza
+class PepperoniPizza
+
+CheesePizza -up-|> Pizza
+VeggiePizza -up-|> Pizza
+ClamPizza -up-|> Pizza
+PepperoniPizza -up-|> Pizza
+
+note bottom of VeggiePizza
+These are our concreate products. Each
+product needs to implement the Pizza
+interface* (which in this case means
+"extend the abstract Pizza class") and
+be concreate. As long as that's the case,
+it can be created by the factory and
+handed back to the client.
+end note
+
+@enduml
