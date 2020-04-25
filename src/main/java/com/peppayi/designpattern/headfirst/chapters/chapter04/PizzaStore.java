@@ -1,15 +1,9 @@
 package com.peppayi.designpattern.headfirst.chapters.chapter04;
 
-public class PizzaStore {
+public abstract class PizzaStore {
 
-    private SimplePizzaFactory factory;
-
-    public PizzaStore(SimplePizzaFactory factory) {
-        this.factory = factory;
-    }
-
-    public Pizza orderPizza(String type) {
-        Pizza pizza = factory.createPizza(type);
+    public final Pizza orderPizza(String type) {
+        Pizza pizza = createPizza(type);
 
         pizza.prepare();
         pizza.bake();
@@ -18,4 +12,6 @@ public class PizzaStore {
 
         return pizza;
     }
+
+    protected abstract Pizza createPizza(String type);
 }

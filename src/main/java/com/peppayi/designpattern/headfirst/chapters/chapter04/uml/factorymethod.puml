@@ -1,0 +1,42 @@
+@startuml
+
+abstract class Creator {
+    # {abstract} factoryMethod()
+    + anOperation()
+}
+
+note top of Creator
+The Creator is a class that contains
+the implementations for all of the
+methods to manipulate products,
+except for the factory method.
+end note
+
+note right of Creator
+The abstract factoryMethod()
+is what all Creator subclasses
+must implement
+end note
+
+class ConcreteCreator {
+    # factoryMethod()
+}
+Creator <|-- ConcreteCreator
+
+note right of ConcreteCreator
+The ConcreteCreator implements the
+factoryMethod(), which is the method
+that actually produces products.
+end note
+
+interface Product
+class ConcreteProduct
+Product <|.. ConcreteProduct
+
+ConcreteCreator -left-> ConcreteProduct
+
+note "The ConcreteCreator is responsible for\ncreating one or more concrete products. It\nis the only class that has knowledge of\nhow to create these products." as N1
+ConcreteCreator .. N1
+ConcreteProduct .. N1
+
+@enduml
