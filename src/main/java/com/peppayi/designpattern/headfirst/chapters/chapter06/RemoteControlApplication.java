@@ -1,5 +1,7 @@
 package com.peppayi.designpattern.headfirst.chapters.chapter06;
 
+import com.peppayi.designpattern.headfirst.chapters.chapter06.command.GarageDoorOpenCommand;
+import com.peppayi.designpattern.headfirst.chapters.chapter06.command.LightOnCommand;
 import com.peppayi.designpattern.headfirst.chapters.chapter06.vendor.GarageDoor;
 import com.peppayi.designpattern.headfirst.chapters.chapter06.vendor.Light;
 

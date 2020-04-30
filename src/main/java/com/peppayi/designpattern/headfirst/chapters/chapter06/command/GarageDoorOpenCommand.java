@@ -1,5 +1,6 @@
-package com.peppayi.designpattern.headfirst.chapters.chapter06;
+package com.peppayi.designpattern.headfirst.chapters.chapter06.command;
 
+import com.peppayi.designpattern.headfirst.chapters.chapter06.Command;
 import com.peppayi.designpattern.headfirst.chapters.chapter06.vendor.GarageDoor;
 
 public class GarageDoorOpenCommand implements Command {
