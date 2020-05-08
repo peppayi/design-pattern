@@ -1,0 +1,36 @@
+@startuml
+
+interface Target <<interface>> {
+    + request()
+}
+
+class Adapter {
+    + request()
+}
+
+Target <|.. Adapter
+note left of Adapter
+The Adapter implements the Target interface.
+end note
+
+class Adaptee {
+    + specificRequest()
+}
+
+Adapter -right-> Adaptee
+note bottom of Adapter
+Adapter is composed with the Adaptee
+end note
+
+note bottom of Adaptee
+All requests get delegated to the Adaptee.
+end note
+
+class Client
+
+Client -right-> Target
+note top of Client
+The client sees only the Target interface.
+end note
+
+@enduml
