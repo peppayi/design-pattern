@@ -1,0 +1,23 @@
+@startuml
+
+interface Iterator<E> <<interface>> {
+    + boolean hasNext()
+    + E next()
+    + void remove()
+}
+
+interface Enumeration<E> <<interface>> {
+    + boolean hasMoreElements()
+    + E nextElement()
+}
+
+class EnumerationIterator<E> {
+    + boolean hasNext()
+    + E next()
+    + void remove()
+}
+
+EnumerationIterator .up.|> Iterator
+EnumerationIterator -right-> Enumeration
+
+@enduml
